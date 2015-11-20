@@ -7,10 +7,17 @@ var data = [
 
 var CommentList = React.createClass({
   render: function () {
+    var comments = this.props.data.map(function (comment) {
+      return (
+        <Comment author={comment.author} id={comment.id}>
+          {comment.text}
+        </Comment>
+      )
+    })
+
     return (
       <div className='commentList'>
-        <Comment author='A. Author'>I am an author.</Comment>
-        <Comment author='A. Nother'>As am I.</Comment>
+        {comments}
       </div>
     )
   }
