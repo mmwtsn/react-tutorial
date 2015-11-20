@@ -1,5 +1,10 @@
 /* global React, ReactDOM */
 
+var data = [
+  {id: 1, author: 'Maxwell Watson', text: 'Hello world!'},
+  {id: 2, author: 'Maxwell Watson', text: 'Hallo Welt.'}
+]
+
 var CommentList = React.createClass({
   render: function () {
     return (
@@ -26,7 +31,7 @@ var CommentBox = React.createClass({
     return (
       <div className='commentBox'>
         <h1>Comments!</h1>
-        <CommentList />
+        <CommentList data={this.props.data} />
         <CommentForm />
       </div>
     )
@@ -48,6 +53,6 @@ var Comment = React.createClass({
 })
 
 ReactDOM.render(
-  <CommentBox />,
+  <CommentBox data={data} />,
   document.getElementById('content')
 )
