@@ -4,7 +4,8 @@ var CommentList = React.createClass({
   render: function () {
     return (
       <div className='commentList'>
-        CommentList
+        <Comment author='A. Author'>I am an author.</Comment>
+        <Comment author='A. Nother'>As am I.</Comment>
       </div>
     )
   }
